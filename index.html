@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Aplicación Práctica RA - Visualizador 3D</title>
+    <!-- Librerías A-Frame y AR.js -->
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+    <!-- Escena de Realidad Aumentada vinculada a la cámara -->
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+      
+      <!-- Marcador físico de referencia (Patrón Hiro) -->
+      <a-marker preset="hiro">
+        <!-- Objeto 3D superpuesto (Ejemplo: representación de una molécula o pieza mecánica) -->
+        <a-box position="0 0.5 0" material="color: #0077ff; opacity: 0.8;" animation="property: rotation; to: 0 360 0; loop: true; dur: 4000"></a-box>
+        <a-text value="Componente Analizado" position="-0.8 1.3 0" color="#ffffff" scale="0.8 0.8 0.8"></a-text>
+      </a-marker>
+
+      <!-- Cámara del dispositivo -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
